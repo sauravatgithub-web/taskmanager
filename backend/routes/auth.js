@@ -122,15 +122,15 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth : {
-        user : "sauravkumarsing2004@gmail.com",
-        pass : "oclm yubv zsjf xnrd"
+        user : "EMAIL_HERE",
+        pass : "APP_PASSWORD_HERE"
     }
 });
 
 // function to send a reset password
 const sendResetEmail = (email, sharedToken) => {
     const mailOptions = {
-        from : "sauravkumarsing2004@gmail.com",
+        from : "EMAIL_HERE",
         to : email,
         subject : 'Password reset',
         text: `Your OTP is: ${sharedToken}`
