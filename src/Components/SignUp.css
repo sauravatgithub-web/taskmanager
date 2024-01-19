@@ -34,14 +34,14 @@
 }
 .googleSign:hover {
     border: none;
-    background-color: rgba(192, 188, 188, 0.749);
+    background-color: rgba(169, 153, 153, 0.749);
     border-radius: 6px;
     cursor: pointer;
 }
 
 .form-item {
     margin: 10px;
-    border: 1px solid grey;
+    border: 1px solid rgba(128, 128, 128, 0.603);
     border-radius: 6px;
     width: 400px;
     height: 60px;
@@ -79,13 +79,6 @@
     background-color: rgb(192, 70, 26);
 }
 
-.bottom-first {
-    align-self: flex-start;
-    padding-left: 8%;
-    text-decoration: underline;
-    margin-bottom: 15px;
-    font-size: 12px;
-}
 .bottom-second {
     width: 400px;
     margin-bottom: 30px;

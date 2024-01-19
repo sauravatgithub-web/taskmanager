@@ -53,7 +53,7 @@ const Home = () => {
                 <div className="text">
                     <div className="basic">Organize your work<br /> and life finally.</div>
                     <div className="second">Become focused, organized, and calm with Task Manager. The world's #1<br /> task manager and to-do list app.</div>
-                    <Link to = '/login'><div className="button">Start for Free</div></Link>
+                    <Link to = '/signUp'><div className="button">Start for Free</div></Link>
                 </div>
                 <div className="background-content">
                     <video src={bvideo} alt="video-preview" />

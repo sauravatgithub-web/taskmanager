@@ -32,9 +32,9 @@ const Navbar = () => {
                             <i className="fa-solid fa-ellipsis-vertical"></i>
                         </li>
                         <li className="nav-items">
-                            <Link className="nav-main-item" to="/">Log In</Link>
+                            <Link className="nav-main-item" to="/login">Log In</Link>
                         </li>
-                        <li className="nav-items">Start for Free</li>
+                        <li className="nav-items"><Link to = "/signUp">Start for Free</Link></li>
                     </ul>
                 </div>
             </div>

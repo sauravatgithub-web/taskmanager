@@ -41,6 +41,9 @@
     padding : 0;
     overflow : hidden;
 }
+.navbar-list:last-child Link{
+    color: white;
+}
 
 .nav-items {
     float : left;
