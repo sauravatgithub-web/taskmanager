@@ -41,9 +41,6 @@
     padding : 0;
     overflow : hidden;
 }
-.navbar-list:last-child Link{
-    color: white;
-}
 
 .nav-items {
     float : left;
@@ -58,6 +55,7 @@
 
 .nav-items:last-child {
     color : white;
+    margin-left: 10px;
     background-color: rgba(255, 47, 0, 0.845);
     border-radius: 10px;
     padding : 10px 10px;
@@ -65,7 +63,11 @@
 }
 
 .nav-items:last-child:hover {
-    background-color: rgba(255, 68, 0, 0.991);
+    background-color: rgb(192, 70, 26);
+}
+
+.signUpLink{
+    color: white;
 }
 
 .nav-main-item {

@@ -56,7 +56,7 @@ const Home = () => {
                     <Link to = '/signUp'><div className="button">Start for Free</div></Link>
                 </div>
                 <div className="background-content">
-                    <video src={bvideo} alt="video-preview" />
+                    <video src={bvideo} alt="video-preview" autoPlay loop muted/>
                     <img className="img-content" src={background} alt="app-preview" />
                     <img className="hide-screen" src={screen} alt="screen" />
                 </div>

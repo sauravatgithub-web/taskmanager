@@ -1,69 +1,65 @@
-.page {
+.page-login {
     display: flex;
     padding: 20vh 9vw;
 }
-.form {
-    width: 50%;
+.form-login {
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.video {
-    width: 50%;
+.image-login {
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left : 180px;
 }
-.form #firstText{
+.form-login #firstText-login{
     align-self: flex-start;
     padding-left: 8%;
     font-weight: bold;
     font-size: 32px;
 }
-
-.googleSign {
-    padding-top: 5px;
-    width: 400px;
-    height: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    border: 0.5 solid rgb(222, 208, 208);
-    margin: 10px;
-}
-.googleSign:hover {
-    border: none;
-    background-color: rgb(206, 21, 21);
-    border-radius: 6px;
-    cursor: pointer;
+.state {
+    align-self: flex-start;
+    padding-left: 8%;
+    font-size : 13px;
+    margin-top: 0;
 }
 
-.form-item {
+.login-login {
+    align-self: flex-start;
+    padding-left: 5%;
+}
+
+.form-item-login {
+    align-self: flex-start;
     margin: 10px;
     border: 1px solid grey;
     border-radius: 6px;
-    width: 400px;
+    width: 300px;
     height: 60px;
     padding: 2px 5px 1px 5px;
 }
-.form-item:hover {
+.form-item-login:hover {
     border-width: 2px;
     border-color: black;
 }
-.form-item label {
+.form-item-login label {
     font-size: 12px;
 }
-.form-element {
+.form-element-login {
     outline: none;
     border: none;
     font-size: 17px;
     width: 100%;
 }
 
-.Submit {
+.Submit-login {
     margin: 10px;
-    width: 400px;
+    width: 300px;
     height: 50px;
     text-align: center;
     padding: 10px;
@@ -74,29 +70,21 @@
     font-weight: bold;
     border: none;
 }
-.Submit:hover {
+.Submit-login:hover {
     cursor: pointer;
     background-color: rgb(192, 70, 26);
 }
 
-.bottom-first {
-    align-self: flex-start;
-    padding-left: 8%;
-    text-decoration: underline;
-    margin-bottom: 15px;
+.bottom-text-login {
+    width: 300px;
+    align-self : flex-start;
+    padding-left : 5%;
+    margin-top: 12%;
     font-size: 12px;
 }
-.bottom-first {
-    cursor: pointer;
-}
-.bottom-second {
-    width: 400px;
-    margin-bottom: 30px;
-    font-size: 12px;
-}
-.bottom-text {
-    font-size: 12px;
-}
-.loginLink {
+.bottom-text-login .loginLink-login {
+    position: relative;
+    left: 130px;
+    text-align : center;
     text-decoration: underline;
 }

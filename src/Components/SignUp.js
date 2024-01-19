@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import symbol from './Images/computer.png'
+import symbol from './Images/symbol.mp4'
 import "./SignUp.css"
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -20,8 +20,8 @@ const SignUp = () => {
         const json = await response.json();
         console.log(json);
         if(json.success) {
-            localStorage.setItem('token', json.suthToken);
-            navigate("/");
+            localStorage.setItem('token', json.authToken);
+            navigate("/login");
         }
         else {
             alert("Invalid Credentials");
@@ -58,7 +58,7 @@ const SignUp = () => {
                 <div className = "bottom-text">Already have an account? <Link className = "loginLink" to = '/login'>Login</Link> </div>
             </div>
             <div className = "video">
-                <img src = {symbol} alt = "video" height = "320px"/>
+                <video src = {symbol} alt = "video" height = "420px" autoPlay muted/>
             </div>
         </div>
     )
