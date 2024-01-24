@@ -1,0 +1,27 @@
+.task-item {
+    padding-left : 20px;
+    margin-top : 20px;
+    width : 80%;
+}
+.task-item:hover {
+    cursor : pointer;
+}
+.head {
+    font-size : 15px;
+    color : black;
+}
+.body {
+    font-size : 12px;
+    color : grey;
+}
+.checkBox:hover {
+    cursor : pointer;
+}
+.edit {
+    float : right;
+    color : grey;
+}
+.edit:hover {
+    color : black;
+    font-weight: bold;
+}

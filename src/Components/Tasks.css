@@ -1,0 +1,93 @@
+.plus-hide {
+    padding : 2px;
+    color : grey;
+    display : inline-block;
+}
+.plus {
+    color : red;
+}
+.plus-hide:hover {
+    cursor : pointer;
+    color : red;
+}
+.add-item {
+    position: relative;
+    width: 90%;
+    border: 1px solid #8080805b;
+    border-radius: 7px;
+    background-color: white;
+    z-index: 1;
+    margin-left: 5%;
+}
+.add-item hr{
+    opacity: 80%;
+}
+.top-item, .bottom-item{
+    padding: 5px;
+}
+.task-name, .description {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.task-name {
+    height: 30px;
+    font-size: 14px;
+}
+.task-name::placeholder {
+    font-weight: 550;
+    color: rgb(105, 104, 104);
+}
+.filled {
+    color: #000000;
+}
+
+.description {
+    height: 20px;
+}
+
+.due-date {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+    padding: 5px;
+    border-radius: 7px;
+}
+.due-date:hover {
+    cursor:pointer;
+}
+
+.priority {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+    padding: 5px;
+    border-radius: 7px;
+}
+.priority:hover {
+    cursor:pointer;
+}
+.bottom-item {
+    text-align: right;
+}
+.cancel {
+    margin: 3px;
+    background-color: rgba(128, 128, 128, 0.285);
+    border : none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.add-task {
+    margin: 3px;
+    background-color: orangered;
+    color: white;
+    border : none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.add-task:hover {
+    background-color: rgb(192, 70, 26);
+}
+.cancel:hover, .add-task:hover {
+    cursor: pointer;
+}

@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Availaible routes
 app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/data', require('./routes/data'));
+app.use('/api/task', require('./routes/task'));
 
 app.get('/', (req, res) => {
     res.send("Hello World");

@@ -6,9 +6,9 @@ const { body, validationResult } = require('express-validator');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const jwt = require('../creatorToken');
 const nodemailer = require('nodemailer');
-const fetchUser = require('../middleWare/fetchUser');
+// const fetchUser = require('../middleWare/fetchUser');
 const SMTPConnection = require('nodemailer/lib/smtp-connection');
 
 const JWT_SECRET = "task_schema745@gmail";
@@ -21,8 +21,7 @@ let success;
 router.post('/createUser', [
     body('email', 'Invalid email').isEmail(),
     body('password', 'Password must be atleast 5 characters long').isLength({min : 5})
-], 
-async (req, res) => {
+], async (req, res) => {
     // check for errors
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
@@ -57,7 +56,7 @@ async (req, res) => {
             }
             const authToken = jwt.sign(data, JWT_SECRET);
             success = true;
-            return res.json({success, message: "User created successfully", user: newUser, authToken: authToken});
+            return res.json({success, message: "User created successfully", user: newUser, authToken : authToken});
         }
     }
     catch (error) {
@@ -77,39 +76,40 @@ router.post('/userLogin', [
         success = false;
         return res.status(400).send({success, errors : errors.array()});
     }
-
-    // check if email exists in database
-    try {
-        let user = await User.findOne({email : req.body.email});
-        if(!user) {
-            success = false;
-            console.log("Email not found");
-            return res.status(400).send({success, message : "Credentials unmatched"});
-        }
-        else {
-            let passwordCheck = await bcrypt.compare(req.body.password, user.password);
-            if(!passwordCheck) {
+    else {
+        // check if email exists in database
+        try {
+            let user = await User.findOne({email : req.body.email});
+            if(!user) {
                 success = false;
-                console.log("Password unmatched.");
+                console.log("Email not found");
                 return res.status(400).send({success, message : "Credentials unmatched"});
             }
             else {
-                const data = {
-                    user: {
-                        id : user.id
-                    }
+                let passwordCheck = await bcrypt.compare(req.body.password, user.password);
+                if(!passwordCheck) {
+                    success = false;
+                    console.log("Password unmatched.");
+                    return res.status(400).send({success, message : "Credentials unmatched"});
                 }
+                else {
+                    const data = {
+                        user: {
+                            id : user.id
+                        }
+                    }
 
-                const userAuthToken = jwt.sign(data, JWT_SECRET);
-                success = true;
-                res.json({success, authToken : userAuthToken});
+                    const userAuthToken = jwt.sign(data, JWT_SECRET);
+                    success = true;
+                    res.json({success, authToken : userAuthToken});
+                }
             }
         }
-    }
-    catch (error) {
-        console.log(error);
-        success = false;
-        return res.status(500).send(success, "Some unexpected error occured at server.");
+        catch (error) {
+            console.log(error);
+            success = false;
+            return res.status(500).send(success, "Some unexpected error occured at server.");
+        }
     }
 })
 
@@ -122,15 +122,15 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth : {
-        user : "EMAIL_HERE",
-        pass : "APP_PASSWORD_HERE"
+        user : "YOUR_EMAIL_HERE",
+        pass : "APP_PASSWORD"
     }
 });
 
 // function to send a reset password
 const sendResetEmail = (email, sharedToken) => {
     const mailOptions = {
-        from : "EMAIL_HERE",
+        from : "YOUR_EMAIL_HERE",
         to : email,
         subject : 'Password reset',
         text: `Your OTP is: ${sharedToken}`
@@ -154,31 +154,32 @@ router.post('/forgetPassword', [
         success = false;
         return res.status(400).send({success, errors : errors.array()});
     }
-
-    try {
-        const user = User.findOne({email : req.body.email});
-        if(!user) {
+    else {
+        try {
+            const user = User.findOne({email : req.body.email});
+            if(!user) {
+                success = false;
+                console.log("Enter a valid email id.");
+                res.status(400).send({success, message : "Email not found"});
+            }
+            else {
+                // generate a unique token and associate with user email
+                const token = crypto.randomBytes(4).toString('hex');
+                const expirationTime = new Date(Date.now() + 60 * 60 * 1000); // 1 hour expiration
+                passwordResetTokens[req.body.email] = { token, expirationTime };
+    
+                // Send an email with the reset link
+                const sharedToken = `${token}`;
+                sendResetEmail(req.body.email, sharedToken);
+    
+                res.json({ success: true, message: 'Password reset email sent.' });
+            }
+        }
+        catch (error) {
             success = false;
-            console.log("Enter a valid email id.");
-            res.status(400).send({success, message : "Email not found"});
+            console.log(error);
+            res.status(500).send({success, message : "Internal server error"});
         }
-        else {
-            // generate a unique token and associate with user email
-            const token = crypto.randomBytes(4).toString('hex');
-            const expirationTime = new Date(Date.now() + 60 * 60 * 1000); // 1 hour expiration
-            passwordResetTokens[req.body.email] = { token, expirationTime };
-
-            // Send an email with the reset link
-            const sharedToken = `${token}`;
-            sendResetEmail(req.body.email, sharedToken);
-
-            res.json({ success: true, message: 'Password reset email sent.' });
-        }
-    }
-    catch (error) {
-        success = false;
-        console.log(error);
-        res.status(500).send({success, message : "Internal server error"});
     }
 })
 

@@ -26,7 +26,7 @@ const Login = () => {
         if(json.success) {
             localStorage.setItem('token', json.authToken);
             alert("Logged in successfully");
-            navigate("/"); 
+            navigate("/main"); 
         }
         else {
             alert("Invalid credentials..");

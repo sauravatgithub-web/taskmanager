@@ -1,0 +1,20 @@
+.main-content-here {
+    height : 80%;
+}
+
+.suitcase {
+    position : relative;
+    left : 30%;
+    top: 9%;
+    width : max-content;
+    text-align: center;
+    opacity: 80%;
+}
+.img-content-1 {
+    margin : 5px 0;
+    font-weight : 700;
+}
+.img-content-2 {
+    margin-top : 3px;
+    color : rgba(128, 128, 128, 0.822);
+}

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import "./Home.css"
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 const microsoft = require('./Images/microsoft.png')
 const disnep = require('./Images/disnep.png')
 const amazon = require('./Images/amazon.png')
@@ -49,6 +50,7 @@ const Home = () => {
 
     return (
         <div>
+            <Navbar/>
             <main>
                 <div className="text">
                     <div className="basic">Organize your work<br /> and life finally.</div>

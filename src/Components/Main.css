@@ -1,0 +1,210 @@
+ul {
+    list-style-type: none;
+    padding:  0;
+}
+.mainPage {
+    display: flex;
+    flex-direction: row;
+    height : 100vh;
+    width: 100vw;
+}
+.leftBox {
+    padding: 1%;
+    width : 22%;
+    background-color: rgba(232, 181, 139, 0.112);
+    /* animation : close 1s; */
+}
+.rightBox {
+    padding : 1%;
+    width : 78%;
+    /* animation : open 1s; */
+}
+.headerBar {
+    width : 100%;
+    display : flex;
+}
+.headerBar .userName{
+    width :max-content;
+    padding: 5px;
+    margin-right : 50%;
+}
+.headerBar .userName:hover{
+    cursor : pointer;
+    border-radius : 5px;
+    background-color: rgba(232, 181, 139, 0.514);
+}
+
+/* css for close button */
+.close-button, .open-button{
+    padding : 7px;
+}
+.close-button:hover, .open-button:hover{
+    cursor : pointer;
+    border-radius : 5px;
+    background-color: rgba(232, 181, 139, 0.514);
+}
+
+/* css for tooltip */
+.tooltip {
+    top : 1px;
+    float : right;
+    position: relative;
+}  
+.tooltip .tooltiptext {
+    font-size: 12px;
+    visibility: hidden;
+    width: 150px;
+    top: 100%;
+    left: 50%;
+    margin-left: -75px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.userOptions {
+    width : 280px;
+    border-radius : 6px;
+    background-color: white;
+    box-shadow : 2px 2px 5px 2px rgba(127, 125, 125, 0.655);
+    position: absolute;
+    z-index: 1;
+}
+.line {
+    margin : 0;
+    color: rgba(128, 128, 128, 0.669);
+}
+.userOption-list {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.userOption-value {
+    position: relative;
+    top: 2%;
+    margin: 3px;
+    height : 40px;
+    padding: 7px;
+    color : #373737;
+}
+.userOption-value:first-child {
+    height : 35px;
+    font-weight : bold;
+}
+.userOption-value:hover {
+    background-color: #808080af;
+    border-radius: 7px;
+}
+
+.current-option {
+    background-color : rgba(255, 0, 0, 0.201);
+    border-radius : 7px;
+}
+
+.options {
+    padding : 0;
+    list-style-type : none;
+}
+.option-value {
+    height : 36px;
+    padding: 6px 3px 0;
+}
+.option-value:first-child {
+    color : red;
+}
+.option-value:hover {
+    cursor: pointer;
+    background-color : rgba(232, 181, 139, 0.235);
+    border-radius : 7px;
+}
+
+.top-symbols {
+    height : 3%;
+}
+.slider {
+    margin-left : 97%;
+    padding: 7px;
+    color: grey;
+}
+.slider:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #80808068;
+    border-radius: 6px;
+}
+
+.content-body {
+    height : 90%;
+    padding-left : 10%;
+}
+
+.task-name {
+    height: 30px;
+    font-size: 14px;
+}
+.task-name::placeholder {
+    font-weight: 550;
+    color: rgb(105, 104, 104);
+}
+.filled {
+    color: #000000;
+}
+
+.description {
+    height: 20px;
+}
+
+.due-date {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+    padding: 5px;
+    border-radius: 7px;
+}
+.due-date:hover {
+    cursor:pointer;
+}
+
+.priority {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+    padding: 5px;
+    border-radius: 7px;
+}
+.priority:hover {
+    cursor:pointer;
+}
+.bottom-item {
+    text-align: right;
+}
+.cancel {
+    margin: 3px;
+    background-color: rgba(128, 128, 128, 0.285);
+    border : none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.add-task {
+    margin: 3px;
+    background-color: orangered;
+    color: white;
+    border : none;
+    padding: 8px;
+    border-radius: 5px;
+}
+.add-task:hover {
+    background-color: rgb(192, 70, 26);
+}
+.cancel:hover, .add-task:hover {
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('../creatorToken');
 const JWT_SECRET = "task_schema745@gmail"
 
 const fetchUser = (req, res, next) => {

@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const TaskSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref : 'user'
     },
-    title: {
+    taskName: {
         type: String,
         required: true
     },
@@ -14,13 +14,22 @@ const TaskSchema = new mongoose.Schema({
         unique: true
     }, 
     tag: {
-        type: String,
-        required: true
+        type: String
     },
     date : {
         type: Date,
         default: Date.now
+    },
+    dueDate: {
+        type: Date,
+        default: () => {
+            const currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() + 1);
+            return currentDate;
+        }
     }
 });
 
-module.exports = mongoose.model('task', TaskSchema);
+const Task= mongoose.model('task', taskSchema);
+Task.createIndexes();
+module.exports = Task;

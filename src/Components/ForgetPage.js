@@ -1,7 +1,7 @@
+import "./Forget.css"
 import React, {useState} from 'react'
 import forget from './Images/forget.png'
 import { Link, useNavigate } from 'react-router-dom'
-import './ForgetPage.css'
 
 const ForgetPage = () => {
     const [value, setValue] = useState({email : ""});
@@ -42,7 +42,7 @@ const ForgetPage = () => {
                         <label htmlFor='email' className = "label">Email </label><br/>
                         <input className = "form-element-login" type = "email" name = "email" id = "email-value" required autoComplete = "true" placeholder='Enter your email...' width = "400px" onChange = {onChange}></input>
                     </div>
-                    <button type="submit" className ="Submit-login">Reset my Password</button>
+                    <button type="submit" className ="submit-login">Reset my Password</button>
                 </form>
                 <div className = "bottom-text-login"><Link className = "loginLink-login" to = '/login'>Go to login</Link> </div>
             </div>
