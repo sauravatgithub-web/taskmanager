@@ -1,6 +1,12 @@
+.app-name {
+    text-align: left;
+    padding: 3% 9vw 2% 10vw;
+    font-size: 30px;
+    font-weight: bold;
+}
 .page {
     display: flex;
-    padding: 20vh 9vw;
+    padding: 6% 9vw;
 }
 .form {
     width: 50%;

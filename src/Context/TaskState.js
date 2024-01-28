@@ -18,7 +18,9 @@ const TaskState = (props) => {
                 "content-type" : "application/json",
                 "auth-token" : localStorage.getItem('token')
             }
-        });
+        }).catch(error => {
+            console.error('Error fetching data:', error);
+        })
         const json = await response.json();
         setTasks(json);
     }

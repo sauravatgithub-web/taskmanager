@@ -26,7 +26,11 @@ const Tasks = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await addTask(task.taskName, task.description, task.tag);
-        alert("New note added.");
+        let form = document.getElementsByClassName("add-item");
+        for(let i = 0; i < form.length; i++) {
+            form[i].querySelector(".task-name").value = "";
+            form[i].querySelector(".description").value = "";
+        }
     }
 
     const onChange = (e) => {
@@ -97,7 +101,7 @@ const Tasks = () => {
                 <hr className="line" />
                 <div className="bottom-item">
                     <button className="cancel" onClick={handleCancel}>Cancel</button>
-                    <button className="add-task"  type="submit">Add Task</button>
+                    <button className="add-task" type="submit">Add Task</button>
                 </div>
             </form>}
         </div>

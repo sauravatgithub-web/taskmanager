@@ -145,13 +145,36 @@ ul {
 .content-body {
     height : 90%;
     padding-left : 10%;
+    position : relative;
 }
 
-.task-name {
+.add-item-lb {
+    text-align: justify;
+    position: absolute;
+    width: 60%;
+    border: 1px solid #8080805b;
+    border-radius: 7px;
+    background-color: white;
+    z-index: 2;
+    margin-left: 5%;
+    box-shadow : 0 6px 50px 25px rgba(0, 0, 0, 0.2);;
+}
+.add-item-lb hr{
+    opacity: 80%;
+}
+.top-item-lb, .bottom-item-lb{
+    padding: 5px;
+}
+.task-name-lb, .description-lb {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.task-name-lb {
     height: 30px;
     font-size: 14px;
 }
-.task-name::placeholder {
+.task-name-lb::placeholder {
     font-weight: 550;
     color: rgb(105, 104, 104);
 }
@@ -159,42 +182,42 @@ ul {
     color: #000000;
 }
 
-.description {
+.description-lb {
     height: 20px;
 }
 
-.due-date {
+.due-date-lb {
     margin: 5px;
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.596);
     padding: 5px;
     border-radius: 7px;
 }
-.due-date:hover {
+.due-date-lb:hover {
     cursor:pointer;
 }
 
-.priority {
+.priority-lb {
     margin: 5px;
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.596);
     padding: 5px;
     border-radius: 7px;
 }
-.priority:hover {
+.priority-lb:hover {
     cursor:pointer;
 }
-.bottom-item {
+.bottom-item-lb {
     text-align: right;
 }
-.cancel {
+.cancel-lb {
     margin: 3px;
     background-color: rgba(128, 128, 128, 0.285);
     border : none;
     padding: 8px;
     border-radius: 5px;
 }
-.add-task {
+.add-task-lb {
     margin: 3px;
     background-color: orangered;
     color: white;
@@ -202,9 +225,20 @@ ul {
     padding: 8px;
     border-radius: 5px;
 }
-.add-task:hover {
+.add-task-lb:hover {
     background-color: rgb(192, 70, 26);
 }
-.cancel:hover, .add-task:hover {
+.cancel-lb:hover, .add-task-lb:hover {
     cursor: pointer;
+}
+
+.due-date-lb {
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.596);
+    padding: 5px;
+    border-radius: 7px;
+}
+.due-date-lb:hover {
+    cursor:pointer;
 }

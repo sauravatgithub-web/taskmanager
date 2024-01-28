@@ -10,12 +10,26 @@ const jwt = require('../creatorToken');
 const nodemailer = require('nodemailer');
 // const fetchUser = require('../middleWare/fetchUser');
 const SMTPConnection = require('nodemailer/lib/smtp-connection');
+const fetchUser = require('../middleWare/fetchUser');
 
 const JWT_SECRET = "task_schema745@gmail";
 
 router.use(express.json());
 router.use(bodyParser.json());
 let success;
+
+// Route 0: Get user using: GET "api/auth"
+// router.get('/getUser', fetchUser, async(req, res) => {
+//     try {
+//         const user = await User.find({_id : req.user.id});
+//         return user;
+//     }
+//     catch (error) {
+//         console.log(error);
+//         res.status(500).send("Unable to get user.");
+//     }
+// })
+
 
 // Route 1: Create a user using: POST "api/auth/"
 router.post('/createUser', [

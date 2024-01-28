@@ -100,7 +100,7 @@ router.delete('/deleteTask/:id', fetchUser, async(req, res) => {
                 res.status(401).send("You are not the authorized person.");
             }
             else {
-                task = await Tasks.findByIdAndDelete(req.params.id);
+                task = await Task.findByIdAndDelete(req.params.id);
                 console.log("Your task is successfully deleted.");
                 res.json("Your task is deleted successfully.");
             }

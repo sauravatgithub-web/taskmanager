@@ -18,15 +18,16 @@
 }
 
 .title {
-    width : 30%;
+    width : 40%;
     background-image: url("favicon.ico");
     background-size: 35px 35px;
     background-repeat : no-repeat;
     text-align: left;
 }
 .list {
-    padding-left : 150px;
-    width : 70%;
+    padding-left: 5%;
+    width : 60%;
+    text-align: right;
 }
 
 .nav-main {

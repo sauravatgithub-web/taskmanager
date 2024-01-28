@@ -9,6 +9,10 @@
 .head {
     font-size : 15px;
     color : black;
+    display : flex;
+}
+.heading-name {
+    width: 90%;
 }
 .body {
     font-size : 12px;
@@ -17,11 +21,11 @@
 .checkBox:hover {
     cursor : pointer;
 }
-.edit {
-    float : right;
+.edit, .dueDate, .showAllOptions {
     color : grey;
+    margin: 0 5px;
 }
-.edit:hover {
+.edit:hover, .dueDate:hover, .showAllOptions:hover {
     color : black;
     font-weight: bold;
 }

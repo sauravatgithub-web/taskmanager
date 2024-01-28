@@ -23,7 +23,7 @@ const Navbar = () => {
                             </Link>
                             {/* <div className = "dropdown-content">
                                 <p>This is hidden.</p>
-                            </div> */}
+                            </div> */} 
                         </li>
                         <li className="nav-items">
                             <Link className="nav-main-item" to="/">Pricing</Link>
